@@ -9,6 +9,11 @@ public class Main {
             pc.setMinLength(Integer.parseInt(scanner.nextLine()));
             System.out.println("Введите макс. допустимое количество повторений символа подряд: ");
             pc.setMaxRepeatSymbol(Integer.parseInt(scanner.nextLine()));
+        } catch (IllegalAccessException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
             while (true) {
                 System.out.println("Введите пароль или end: ");
                 String input = scanner.nextLine();
@@ -23,5 +28,6 @@ public class Main {
         } catch (IllegalAccessException e) {
             System.out.println(e.getMessage());
         }
+        System.out.print("Программа завершена");
     }
 }

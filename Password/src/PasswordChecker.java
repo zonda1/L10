@@ -24,10 +24,17 @@ public class PasswordChecker {
         String[] array = password.split("");
 
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i].equals(array[i + 1])) counter++;
+            if (array[i].equals(array[i + 1])) {
+                counter++;
+            } else {
+                counter = 1;
+            }
+            ;
+            if (counter > maxRepeatSymbol) {
+                return false;
+            }
         }
 
-        return password.length() >= minLength && counter == maxRepeatSymbol;
+        return password.length() >= minLength;
     }
-
 }
